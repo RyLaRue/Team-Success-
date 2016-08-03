@@ -1,6 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><title>Food</title>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
+
+</style>
+</head>
 
 
 
@@ -22,25 +38,14 @@
 
 
 
-	
 
-
-</div>
-
-
-
-
-<div class="lists">
-
-
-
-</div>
-
+<div class="lists"></div>
 
 
 <div style="background-color:pink;  padding:0px;" >
 
 <marquee behavior=alternate>
+
 <h1 style="font-size:600%" align="center">
 
 <span style="color:purple">F</span>
@@ -48,7 +53,7 @@
 <span style="color:purple">o</span>
 <span style="color:blue">d</span>
 
-
+</h1>
 
 	<hr width="500px"/>
 
@@ -83,21 +88,18 @@ li a:hover {
 
 
 }
-
+</ul>
 </style>
-<ul>
-	<li>
-		<a class="active" href="home.html">Home</a>
-	</li>
 
+<ul>
+<li><a class="active" href="home.html">Home</a></li>
 <li><a href="facts.html">Facts</a></li>
 <li><a href="Information">Information</a></li>
 <li><a href="About">About</a></li>
 </ul>
 
-</h1>
 </marquee>
-</head>
+
 </div>
 
 
@@ -105,11 +107,13 @@ li a:hover {
 <body style="background-color:#66ccff;  padding:0px;" >
 
 
+
+
+
 <p style ="text-align: center;">
 	This website is to help people with food restrictions be able to find restaurants to fit the restrictions.<br> We hope to successfully make a difference in the food industry by filling the demand of helping people with food issues. <br> Like Gluten, Nut, Dairy, Egg, Tomato allegies.<br> We also help with health restrictions like Diabities, Heart problems, and High Blood Pressure.
-
-
 </p>
+
 <div map>
    <script src="http://maps.googleapis.com/maps/api/js"></script>
    <div style ="width: 200px; position: absolute; left: 50%;margin-left: 100px;">
@@ -128,6 +132,5 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <div id="googleMap" style="width:500px;height:380px;position: absolute; left: 28%;margin-left: 50px; border:5px solid black;"></div>
 
-</ul>
 </body>
 </html>
