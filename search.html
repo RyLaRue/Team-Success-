@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Food</title>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
+
+</style>
+</head>
+
+
+<!-- 
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ -->
+
+<!-- Latest compiled and minified CSS -->
+
+<!-- jQuery library -->
+
+<!-- Latest compiled JavaScript -->
+
+<style>
+	li{ display: inline; padding: 10px; align: center; }
+</style>
+
+
+
+
+<div class="lists"></div>
+
+
+<div style="background-color:powderblue;  padding:0px;" >
+
+<marquee behavior=alternate>
+
+<h1 style="font-size:600%" align="center">
+
+<span style="color:seashell">F</span>
+<span style="color:seashell">o</span>
+<span style="color:seashell">o</span>
+<span style="color:seashell">d</span>
+
+</h1>
+
+	<hr width="500px"/>
+
+
+<style>
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: seashell;
+	width: 900px;
+	}
+
+	li{
+		float: left;
+	}
+
+
+li a{
+display: block;
+color: dimgray;
+text-align: center;
+padding: 12px 16px;
+text-decoration: none;
+font-size: 40px;
+
+}
+
+li a:hover {
+	background-color: #darkslategray;
+
+
+}
+</ul>
+</style>
+
+<ul>
+<li><a class="active" href="home.html">Home</a></li>
+<li><a href="facts.html">Facts</a></li>
+<li><a href="info.html">Information</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href ="search.html">Search</a></li>
+</ul>
+</marquee>
+
+</div>
+
+
+
+<body style="background-color:darkslategray;  padding:0px;" >
+
+<div map>
+   <script src="http://maps.googleapis.com/maps/api/js"></script>
+   <div style ="width: 200px; position: absolute; left: 50%;margin-left: 100px;">
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</div>
+<div id="googleMap" style="width:500px;height:380px;position: absolute; left: 28%;margin-left: 50px; border:5px solid black;"></div>
+
+</body>
+</html>
