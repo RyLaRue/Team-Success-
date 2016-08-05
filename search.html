@@ -13,7 +13,8 @@
       width: 70%;
       margin: auto;
   }
-
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
 
 </style>
 </head>
@@ -75,7 +76,7 @@ ul {
 
 li a{
 display: block;
-color: dimgray;
+color: ;
 text-align: center;
 padding: 12px 16px;
 text-decoration: none;
@@ -108,6 +109,7 @@ li a:hover {
 
 <div map>
    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
    <div style ="width: 200px; position: absolute; left: 50%;margin-left: 100px;">
 <script>
 function initialize() {
@@ -119,10 +121,12 @@ function initialize() {
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 
 </div>
 <div id="googleMap" style="width:500px;height:380px;position: absolute; left: 28%;margin-left: 50px; border:5px solid black;"></div>
+
 
 </body>
 </html>
