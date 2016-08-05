@@ -32,16 +32,11 @@
 <!-- jQuery library -->
 
 <!-- Latest compiled JavaScript -->
-
 <style>
 	li{ display: inline; padding: 10px; align: center; }
 </style>
 
-
-
-
 <div class="lists"></div>
-
 
 <div style="background-color:powderblue;  padding:0px;" >
 
@@ -58,7 +53,6 @@
 
 	<hr width="500px"/>
 
-
 <style>
 ul {
 	list-style-type: none;
@@ -73,7 +67,6 @@ ul {
 		float: left;
 	}
 
-
 li a{
 display: block;
 color: ;
@@ -86,8 +79,6 @@ font-size: 40px;
 
 li a:hover {
 	background-color: #darkslategray;
-
-
 }
 </ul>
 </style>
@@ -102,10 +93,31 @@ li a:hover {
 </marquee>
 
 </div>
-
-
+<body>
 
 <body style="background-color:darkslategray;  padding:0px;" >
+
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+var nuts = ["Arachis","Artificial nuts","Beer Nuts","cold pressed peanut iol","expelled peanut oil","Fenugreek","Gourmet peanut oil","Ground nuts","Mixed nuts","Flavored nuts","Peanuts","Peanut butter","Peanut flour","Satay","Almonds","Almond milk","almond butter","almond paste","almond oil","almond liqour","almond flavoring","anarcardium nuts","argan oils","artificial nuts","beechnuts","brazil nuts","butter nuts","calisson","cashews","cashew butter","cashew paste","cashew oil","cashew liqour","cashew flavoring","chestnuts","chinquapin","filberts","ginkgo nut","gianduja","giandula","hazelnuts","hazelnut milk","hickory","litchi/lichee/lychee","macademia","mandelonas","marzipan","nangai","nougat","nut extracts","nut distillates","nut butters","nut liqours","nut meal","nut paste","nut pieces","nutella","nutmeat","pecans","pistachios","queensland nut","walnuts","walnut hull extract"];
+
+var pescatarian=["gelatin","resin","cochineal","carminic acid","carmine","casein","chicken broth","lard","bacon","ham hock","crushed beetls","bone char","beef fat","chitosan","beef broth","lanolin","pork","goat","pork fat","bird feathers","bug juice","chicken fat","beef","beaf heart","beef liver","beef tongue","calf liver","caribou","ham","lamb","rabbit","sweetbreads","tripe","veal","venison","chicken","chicken liver","cornish game hen","duck","duck liver","gizzards","goose","goose liver","grouse","guinea hen","liver","ostrich","partridge","pheasant","quail","squab","turkey","brisket","sausage","pepperoni","hamburequers","hot dogs","wraps","bear","bone soups","pork legs","buffalo","bison","meatballs","lasgna","kangaroo","moose","mutton","opossum","snake","squirrel","turtle","ostrich","beef tacos"]
+
+var vegan=["butter","cream","eggs","cheese","milk","poultry","elk","yak","alpaca","gelatin","resin","cochineal","carminic acid","carmine","casein","chicken broth","lard","bacon","ham hock","crushed beetls","bone char","beef fat","chitosan","beef broth","lanolin","pork","goat","pork fat","bird feathers","bug juice","chicken fat","beef","beaf heart","beef liver","beef tongue","calf liver","caribou","ham","lamb","rabbit","sweetbreads","tripe","veal","venison","chicken","chicken liver","cornish game hen","duck","duck liver","gizzards","goose","goose liver","grouse","guinea hen","liver","ostrich","partridge","pheasant","quail","squab","turkey","brisket","sausage","pepperoni","hamburequers","hot dogs","wraps","bear","bone soups","pork legs","buffalo","bison","meatballs","lasgna","kangaroo","moose","mutton","opossum","snake","squirrel","turtle","ostrich","beef tacos","fish","shrimp","shellfish","steak","filleminion","lobster","octopus","shark","tuna","sardines","salmon","albacore","blackfin tuna","blue marlin","flounder","hogfish","pompano","sea mullet","skipjack tuna","spotted trout","vermillion snapper","yellowtail snapper","black drum","blacksea bass","bluefish","butterfish","barracuda","sailfish","swordfish","white marlin","gag grouper","red grouper","red grouper","scamp","silver snapper","blacktip","hammerhead","mako","tiger","milk","butter","cheese","ranch dressing","buttermilk","casein","whey","lactalbumin","fromage frais","lactic acid","cream","ghee","yogurt","hydrolysed casein","hydrolysed whey","pudding","butter fat","custard","rennet","hydrolysate","artificial butter","artificial cheese flavor","galactose","half & half","lactyc yeast","lactitol monohydrate","lactoglobulin","lactose","lactulose","nisin preparation","nougat","quark","recaldent","simplesse","diacetyl","llactoferrin","gelatin","resin","cochineal","carminic acid","carmine","casein","anchovies","chicken broth","lard","bacon","ham hock","fish sauce","fish bladder","crushed beetles","bone char","beef fat","chitosan","tilapia","sardines","fish broth","beef broth","fish oil","lanolin","beef","pork","chicken","fish","pork fat","bird feathers","bug juice","chicken fat","beef heart","beef liver","beef tongue","calf liver","caribou","crocodile","goat","ham","lamb","rabbit","sweetbread","tripe","veal","venison","chicken liver","comish game hen","bisket","hot dog","hamburger","pepperoni","duck","duck liver","grouse","guinea hen","guinea pig","kangaroo","liver","bear","pancreas","ostrich","patridge","pheasant","quail","squab","turkey","breast","buffalo","horse","moose","mutton","opossum","snake","squirrel","turtle","wings","ostrich","emu","sheep","donkey","frog","shirmp","starfish","squid","shark","yellowtail","lobster","catfish","eel","new york strip","filet mignon","rib eye","meat","tuna","halibut","salmon","sushi","monkfish","squilla mantis","snakelocks anemone","crab","crayfish","sea cucumber","octupus","oyster","periwinkle","jellyfish","mussel","loco","cuttlefish","conch","cockle","caviar","ikura","kazunoko","lumpfish","masago","shad","tobiko","whiting","whitefish","wahoo","turbot","trout","tilefish","swordfish","surimi","sturgeon","sole","snapper","snakehead","skate","shad","sea bass","sanddab","sablefish","pompano","pomfret","pollock","pike","patagonian toothfish","orange roughy","mullet","mahi mahi","mackerel","lingcod","lamprey","kingfish","john dory","llish","haddock","grouper","flounder","dorade","dogfish","cod","butter fish","brill","bream","bombay duck","bluefish","blowfish","bass","basa"]
+
+var Dairy-Free = ["milk","butter","cheese","ranch dressing","buttermilk","casein","whey","lactalbumin","fromage frais","lactic acid","cream","ghee","yogurt","hydrolysed casein","hydrolysed whey","pudding","butter fat","custard","rennet","hydrolysate","artificial butter","artificial cheese flavor","galactose","half & half","lactyc yeast","lactitol monohydrate","lactoglobulin","lactose","lactulose","nisin preparation","nougat","quark","recaldent","simplesse","diacetyl","llactoferrin"]
+
+var Vegetarian = ["gelatin","resin","cochineal","carminic acid","carmine","casein","anchovies","chicken broth","lard","bacon","ham hock","fish sauce","fish bladder","crushed beetles","bone char","beef fat","chitosan","tilapia","sardines","fish broth","beef broth","fish oil","lanolin","beef","pork","chicken","fish","pork fat","bird feathers","bug juice","chicken fat","beef heart","beef liver","beef tongue","calf liver","caribou","crocodile","goat","ham","lamb","rabbit","sweetbread","tripe","veal","venison","chicken liver","comish game hen","bisket","hot dog","hamburger","pepperoni","duck","duck liver","grouse","guinea hen","guinea pig","kangaroo","liver","bear","pancreas","ostrich","patridge","pheasant","quail","squab","turkey","breast","buffalo","horse","moose","mutton","opossum","snake","squirrel","turtle","wings","ostrich","emu","sheep","donkey","frog","shirmp","starfish","squid","shark","yellowtail","lobster","catfish","eel","new york strip","filet mignon","rib eye","meat","tuna","halibut","salmon","sushi","monkfish","squilla mantis","snakelocks anemone","crab","crayfish","sea cucumber","octupus","oyster","periwinkle","jellyfish","mussel","loco","cuttlefish","conch","cockle","caviar","ikura","kazunoko","lumpfish","masago","shad","tobiko","whiting","whitefish","wahoo","turbot","trout","tilefish","swordfish","surimi","sturgeon","sole","snapper","snakehead","skate","shad","sea bass","sanddab","sablefish","pompano","pomfret","pollock","pike","patagonian toothfish","orange roughy","mullet","mahi mahi","mackerel","lingcod","lamprey","kingfish","john dory","llish","haddock","grouper","flounder","dorade","dogfish","cod","butter fish","brill","bream","bombay duck","bluefish","blowfish","bass","basa"]
+
+
+
+document.getElementById("demo").innerHTML = cars;
+</script>
+
+
+
 
 <div map>
    <script src="http://maps.googleapis.com/maps/api/js"></script>
