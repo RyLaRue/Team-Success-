@@ -1,0 +1,209 @@
+<html>
+<head>
+	<title>api</title>
+</head>
+
+<body>
+
+	<p id="demo"></p>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+
+		$.getJSON( "https://api.locu.com/v1_0/venue/search/?has_menu=TRUE&radius=1000&postal_code=78660&category=restaurant&api_key=4be1afbf4c996085c1c21dda4ea8ef090a533b2b&jsonp=readJSON&?callback=?", function(response) {
+  			console.log( response );
+			}
+		)
+
+		function readJSON(response){
+		  console.log (response);
+		  //document.getElementById("demo").innerHTML = response.objects[0].resource_uri;
+		  if (response.objects.length!=0){
+		  uri = response.objects[0].resource_uri
+		  key_thing= "?api_key=4be1afbf4c996085c1c21dda4ea8ef090a533b2b&jsonp=readJSON2&?callback=?"
+		  init_url = "https://api.locu.com"
+		  new_url = init_url.concat(uri)
+		  final_url= new_url.concat(key_thing)
+		  console.log(final_url)
+		  $.getJSON(final_url)
+		}else{
+			document.getElementById("restaurant_name").innerHTML = "Cannot find restaurant";
+			document.getElementById("table_body").innerHTML = ""
+		}
+		}
+		function readJSON2(response){
+			console.log(response)
+			document.getElementById("restaurant_name").innerHTML = response.objects[0].name;	
+			value=[]
+			value_text=""
+			gluten_check=false
+			gluten=["wrap","bread","taco","quesadilla","quesadillas"]
+			nuts = ["Arachis","Artificial nuts","Beer Nuts","cold pressed peanut iol","expelled peanut oil","Fenugreek","Gourmet peanut oil","Ground nuts","Mixed nuts","Flavored nuts","Peanuts","Peanut butter","Peanut flour","Satay","Almonds","Almond milk","almond butter","almond paste","almond oil","almond liqour","almond flavoring","anarcardium nuts","argan oils","artificial nuts","beechnuts","brazil nuts","butter nuts","calisson","cashews","cashew butter","cashew paste","cashew oil","cashew liqour","cashew flavoring","chestnuts","chinquapin","filberts","ginkgo nut","gianduja","giandula","hazelnuts","hazelnut milk","hickory","litchi/lichee/lychee","macademia","mandelonas","marzipan","nangai","nougat","nut extracts","nut distillates","nut butters","nut liqours","nut meal","nut paste","nut pieces","nutella","nutmeat","pecans","pistachios","queensland nut","walnuts","walnut hull extract"]
+
+pescatarian=["gelatin","resin","cochineal","carminic acid","carmine","casein","chicken broth","lard","bacon","ham hock","crushed beetls","bone char","beef fat","chitosan","beef broth","lanolin","pork","goat","pork fat","bird feathers","bug juice","chicken fat","beef","beaf heart","beef liver","beef tongue","calf liver","caribou","ham","lamb","rabbit","sweetbreads","tripe","veal","venison","chicken","chicken liver","cornish game hen","duck","duck liver","gizzards","goose","goose liver","grouse","guinea hen","liver","ostrich","partridge","pheasant","quail","squab","turkey","brisket","sausage","pepperoni","hamburequers","hot dogs","wraps","bear","bone soups","pork legs","buffalo","bison","meatballs","lasgna","kangaroo","moose","mutton","opossum","snake","squirrel","turtle","ostrich","beef tacos"]
+
+vegan=["butter","cream","eggs","cheese","milk","poultry","elk","yak","alpaca","gelatin","resin","cochineal","carminic acid","carmine","casein","chicken broth","lard","bacon","ham hock","crushed beetls","bone char","beef fat","chitosan","beef broth","lanolin","pork","goat","pork fat","bird feathers","bug juice","chicken fat","beef","beaf heart","beef liver","beef tongue","calf liver","caribou","ham","lamb","rabbit","sweetbreads","tripe","veal","venison","chicken","chicken liver","cornish game hen","duck","duck liver","gizzards","goose","goose liver","grouse","guinea hen","liver","ostrich","partridge","pheasant","quail","squab","turkey","brisket","sausage","pepperoni","hamburequers","hot dogs","wraps","bear","bone soups","pork legs","buffalo","bison","meatballs","lasgna","kangaroo","moose","mutton","opossum","snake","squirrel","turtle","ostrich","beef tacos","fish","shrimp","shellfish","steak","filleminion","lobster","octopus","shark","tuna","sardines","salmon","albacore","blackfin tuna","blue marlin","flounder","hogfish","pompano","sea mullet","skipjack tuna","spotted trout","vermillion snapper","yellowtail snapper","black drum","blacksea bass","bluefish","butterfish","barracuda","sailfish","swordfish","white marlin","gag grouper","red grouper","red grouper","scamp","silver snapper","blacktip","hammerhead","mako","tiger"]
+
+
+Vegetarian = ["gelatin","resin","cochineal","carminic acid","carmine","casein","anchovies","chicken broth","lard","bacon","ham hock","fish sauce","fish bladder","crushed beetles","bone char","beef fat","chitosan","tilapia","sardines","fish broth","beef broth","fish oil","lanolin","beef","pork","chicken","fish","pork fat","bird feathers","bug juice","chicken fat","beef heart","beef liver","beef tongue","calf liver","caribou","crocodile","goat","ham","lamb","rabbit","sweetbread","tripe","veal","venison","chicken liver","comish game hen","bisket","hot dog","hamburger","pepperoni","duck","duck liver","grouse","guinea hen","guinea pig","kangaroo","liver","bear","pancreas","ostrich","patridge","pheasant","quail","squab","turkey","breast","buffalo","horse","moose","mutton","opossum","snake","squirrel","turtle","wings","ostrich","emu","sheep","donkey","frog","shirmp","starfish","squid","shark","yellowtail","lobster","catfish","eel","new york strip","filet mignon","rib eye","meat","tuna","halibut","salmon","sushi","monkfish","squilla mantis","snakelocks anemone","crab","crayfish","sea cucumber","octupus","oyster","periwinkle","jellyfish","mussel","loco","cuttlefish","conch","cockle","caviar","ikura","kazunoko","lumpfish","masago","shad","tobiko","whiting","whitefish","wahoo","turbot","trout","tilefish","swordfish","surimi","sturgeon","sole","snapper","snakehead","skate","shad","sea bass","sanddab","sablefish","pompano","pomfret","pollock","pike","patagonian toothfish","orange roughy","mullet","mahi mahi","mackerel","lingcod","lamprey","kingfish","john dory","llish","haddock","grouper","flounder","dorade","dogfish","cod","butter fish","brill","bream","bombay duck","bluefish","blowfish","bass","basa"]
+
+
+
+			for (p=0; p<response.objects[0].menus.length; p++){
+			for (o = 0; o< response.objects[0].menus[p].sections.length; o++) { 
+			for (j = 0; j < response.objects[0].menus[p].sections[o].subsections.length; j++) { 
+			for (i = 0; i < response.objects[0].menus[p].sections[o].subsections[j].contents.length; i++) { 
+				//document.getElementById("demo").innerHTML = i
+				gluten_check=false;
+				nuts_check=false;
+				vegetarian_check=false;
+				vegan_check=false;
+				pescatarian_check=false;
+				allergy_text="";
+    			value.push(response.objects[0].menus[p].sections[o].subsections[j].contents[i].name);
+    			value_text+="<tr>"+"<td>"+response.objects[0].menus[p].sections[o].subsections[j].contents[i].name+"</td>"+"<td>"
+    			//document.getElementById("demo").innerHTML = value
+    			if (response.objects[0].menus[p].sections[o].subsections[j].contents[i].name!=null){
+    				//console.log(response.objects[0].menus[p].sections[o].subsections[j].contents.length)
+    			allergy_check=response.objects[0].menus[p].sections[o].subsections[j].contents[i].name;
+
+    		}
+    			
+    			for (x_1=0; x_1<nuts.length; x_1++){
+    			allergy_check_lower=allergy_check.toLowerCase();
+    			nuts_lower=nuts[x_1].toLowerCase();
+    			if (allergy_check_lower.includes(nuts_lower)){
+    			 		nuts_check=true
+    			 		console.log(nuts_check)
+    			 	}
+    			 }
+    			 if (nuts_check){
+    			 	value_text+="Nuts,"
+    			 }
+    			 for (x_1=0; x_1<pescatarian.length; x_1++){
+    			allergy_check_lower=allergy_check.toLowerCase();
+    			pescatarian_lower=pescatarian[x_1].toLowerCase();
+    			if (allergy_check_lower.includes(pescatarian_lower)){
+    			 		pescatarian_check=true
+    			 		console.log(pescatarian_check)
+    			 	}
+    			 }
+    			 if (pescatarian_check){
+    			 	value_text+="Pescatarian,"
+    			 }
+    			 for (x_1=0; x_1<vegan.length; x_1++){
+    			allergy_check_lower=allergy_check.toLowerCase();
+    			vegan_lower=vegan[x_1].toLowerCase();
+    			if (allergy_check_lower.includes(vegan_lower)){
+    			 		vegan_check=true
+    			 		console.log(vegan_check)
+    			 	}
+    			 }
+    			 if (vegan_check){
+    			 	value_text+="Vegan,"
+    			 }
+    			  for (x_1=0; x_1<Vegetarian.length; x_1++){
+    			allergy_check_lower=allergy_check.toLowerCase();
+    			vegetarian_lower=Vegetarian[x_1].toLowerCase();
+    			if (allergy_check_lower.includes(vegetarian_lower)){
+    			 		vegetarian_check=true
+    			 		console.log(vegetarian_check)
+    			 	}
+    			 }
+    			 if (vegetarian_check){
+    			 	value_text+="Vegetarian,"
+    			 }
+    			 value_text+="</td>"+"</tr>"
+    		}
+			}
+		}
+	}
+		
+			// value=response.objects[0].menus[0].sections[0].subsections[0].contents[0].name
+			if (value.length==0){
+				document.getElementById("table_body").innerHTML = "NO MENU!"
+			}else{
+			//document.getElementById("demo").innerHTML = value
+			document.getElementById("table_body").innerHTML = value_text
+}
+		
+		}
+function othername() {
+    var input = document.getElementById("userInput").value;
+    var region=document.getElementById("region").value;
+    var locality=document.getElementById("locality").value;
+    var locality2=encodeURI(locality).replace(/'/g, "%27");
+    var region2=encodeURI(region).replace(/'/g, "%27");
+    var input2= encodeURI(input).replace(/'/g, "%27");
+    alert(input2);
+    key_thing= "https://api.locu.com/v1_0/venue/search/?"
+    name_thing="name="
+    region_thing="&region="
+    locality_thing="&locality="
+	init_url = "&api_key=4be1afbf4c996085c1c21dda4ea8ef090a533b2b&jsonp=readJSON&?callback=?"
+	new_url = key_thing.concat(name_thing)
+	final_url= new_url.concat(input2)
+	zipped_url=final_url.concat(locality_thing)
+	zipped_url2=zipped_url.concat(locality2)
+	region_url=zipped_url2.concat(region_thing)
+	region_url2=region_url.concat(region2)
+	actual_url=region_url2.concat(init_url)
+	console.log(actual_url)
+	$.getJSON(actual_url)
+
+
+}
+
+
+
+	</script>
+<form id="form" onsubmit="return false;">
+<div class="form-group">
+	<label for="userInput">Restaurant Name:</label>
+    <input style="position:top; top:80%; left:5%; width:40%;" type="text" id="userInput" />
+    </div>
+    <div class="form-group">
+    <label for="region">State (Abbreviation):</label>
+    <input style="position:top; top:80%; left:5%; width:40%;" type="text" id="region" />
+    </div>
+    <div class="form-group">
+    <label for="locality">City:</label>
+    <input style="position:top; top:80%; left:5%; width:40%;" type="text" id="locality" />
+    </div>
+    <input style="position:top; top:50%; left:5%; width:40%;" type="submit" onclick="othername();" />
+</form>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Items and Restrictions</div>
+  <div class="panel-body">
+    <p id="restaurant_name">...</p>
+  </div>
+
+<div class="container">
+  <!-- Table -->
+  <table class="table">
+  <thead>
+      <tr>
+        <th>Food Item</th>
+        <th>Allergy Restrictions</th>
+      </tr>
+    </thead>
+    <tbody id='table_body'>
+
+    </tbody>
+  </table>
+</div>
+</div>
+
+</body>
+
+</html>
